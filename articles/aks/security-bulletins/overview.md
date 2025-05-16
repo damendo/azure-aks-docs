@@ -24,6 +24,43 @@ These updates cover security information related to the following AKS components
 
 ---
 
+## AKS-2025-008 Important Security Update for Container Insights (AKS Logs add-on)
+
+**Published Date**: May 18, 2025
+
+### Description
+Several security vulnerabilities affecting the AKS Logs add-on were disclosed on March 24, 2025: CVE-2025-1098 (High), CVE-2025-1974 (Critical), CVE-2025-1097 (High), CVE-2025-24514 (High), and CVE-2025-24513 (Medium).
+The CVEs impact ingress-nginx. (If you don't have ingress-nginx installed on your cluster, you aren't affected.)
+You can check for ingress-nginx by running `kubectl get pods --all-namespaces --selector app.kubernetes.io/name=ingress-nginx` .
+
+### References
+
+- [CVE-2025-1098](https://github.com/kubernetes/kubernetes/issues/131008)
+- [CVE-2025-1974](https://github.com/kubernetes/kubernetes/issues/131009) 
+- [CVE-2025-1097](https://github.com/kubernetes/kubernetes/issues/131007)
+- [CVE-2025-24514](https://github.com/kubernetes/kubernetes/issues/131006)
+- [CVE-2025-24513](https://github.com/kubernetes/kubernetes/issues/131005)
+
+
+### Affected Components
+
+#### [**AKS Addons**](#tab/aks-addons)
+
+**Affected Versions**
+
+- < v1.11.0
+- v1.11.0 - 1.11.4
+- v1.12.0
+
+
+**Resolutions**
+
+- If you're using the [Container Insights (via the AKS Logs add-on](https://learn.microsoft.com/azure/azure-monitor/containers/monitor-kubernetes#enable-container-insights-for-collection-of-logs) on AKS, the patches are getting rolled out to all regions with the AKS v2050316 release. **No action is required**. You can check the release status from [AKS release tracker][aks-release-tracker].
+
+
+---
+
+
 ## AKS-2025-007 Important Security Update for Kubernetes Nginx Ingress Controller
 
 **Published Date**: March 24, 2025
